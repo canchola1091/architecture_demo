@@ -1,11 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:architectures_demo/src/home_screen.dart';
-// import 'mvvm/views/user_list_screen.dart' as mvvm;
-// import 'bloc/views/user_list_screen.dart' as bloc;
-// import 'mobx/views/user_list_screen.dart' as mobx;
-// import 'getx/views/user_list_screen.dart' as getx;
+import 'package:architectures_demo/features/users/presentation/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Architecture Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomeScreen(),
+      home: const HomePage(),
     );
   }
 }
