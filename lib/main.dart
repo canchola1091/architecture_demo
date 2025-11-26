@@ -1,7 +1,9 @@
-
 import 'package:flutter/material.dart';
 
-import 'package:architectures_demo/features/users/presentation/pages/home_page.dart';
+import 'package:provider/provider.dart';
+
+import 'features/users/presentation/providers/user_provider.dart';
+import 'features/users/presentation/pages/user_list_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +14,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Architecture Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => UserProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Clean Architecture Demo',
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: const UserListPage(),
+      ),
     );
   }
 }
